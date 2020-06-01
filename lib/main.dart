@@ -69,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
       title: 'Profile Challenge 01',
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.red,
           title: Center(
             child: const Text('Profile Challenge 01'),
           ),
@@ -78,16 +79,23 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 250,
               decoration: BoxDecoration(
-                gradient:
-                    LinearGradient(colors: [Colors.red[500], Colors.red[50]]),
+                gradient: LinearGradient(
+                  colors: [Colors.red, Colors.deepOrange.shade300],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  stops: [0.5, 0.9],
+                ),
               ),
-              child: Stack(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       CircleAvatar(
                         backgroundColor: Colors.red.shade300,
+                        minRadius: 35.0,
                         child: Icon(
                           Icons.call,
                           size: 30.0,
@@ -98,17 +106,37 @@ class _MyHomePageState extends State<MyHomePage> {
                         minRadius: 60.0,
                         child: CircleAvatar(
                           radius: 50.0,
-                          backgroundImage: NetworkImage('https://randomuser.me/api/portraits/lego/0.jpg'),
+                          backgroundImage: NetworkImage(
+                              'https://randomuser.me/api/portraits/lego/0.jpg'),
                         ),
                       ),
                       CircleAvatar(
                         backgroundColor: Colors.red.shade300,
+                        minRadius: 35.0,
                         child: Icon(
                           Icons.message,
                           size: 30.0,
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Leonardo Palmeiro',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    'Flutter Develop',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
                   ),
                 ],
               ),
